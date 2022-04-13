@@ -1,0 +1,26 @@
+{
+  "name": "call-log-push-api",
+  "version": "1.0.0",
+  "description": "Rest API for call log ",
+  "main": "main.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "nodemon main.js"
+  },
+  "keywords": [
+    "Log",
+    "Calls",
+    "API",
+    "Rest"
+  ],
+  "author": "harsh Singh",
+  "license": "ISC",
+  "dependencies": {
+    "dotenv": "^16.0.0",
+    "express": "^4.17.3",
+    "mongoose": "^6.2.10"
+  },
+  "devDependencies": {
+    "nodemon": "^2.0.15"
+  }
+}
