@@ -2,10 +2,13 @@
   "name": "call-log-push-api",
   "version": "1.0.0",
   "description": "Rest API for call log ",
-  "main": "main.js",
+  "main": "index.js",
+  "engines": {
+    "node": ">=8.0.0"
+  },
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "start": "node main.js"
+    "start": "node index.js"
   },
   "keywords": [
     "Log",
