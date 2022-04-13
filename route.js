@@ -27,7 +27,6 @@ router.get("/:id", async (req, res) => {
 //Post One
 router.post("/", async (req, res) => {
   const add_log = new Schema({
-    call_date: req.body.call_date,
     call_time: req.body.call_time,
     call_direction: req.body.call_direction,
     called_number: req.body.called_number,
@@ -43,10 +42,10 @@ router.post("/", async (req, res) => {
     agent_status: req.body.agent_status,
   });
   try {
-    const Logs = await add_log.save();
-    res.status(201).json(Logs);
+    const new_log = await add_log.save();
+    res.status(201).json(new_log);
   } catch (error) {
-    res.status(400).json({ message: err.message, status: "error" });
+    res.status(500).json({ message: error.message, status: "error" });
   }
 });
 
@@ -67,12 +66,12 @@ router.delete("/:id", async (req, res) => {
 
 //Delete all logs
 router.delete("/", async (req, res) => {
-    try {
-        const Logs = await Schema.deleteMany();
-        res.json({ message: "All Logs deleted", status: "success" });
-    } catch (error) {
-        res.status(500).json({ message: err.message, status: "error" });
-    }
+  try {
+    const Logs = await Schema.deleteMany();
+    res.json({ message: "All Logs deleted", status: "success" });
+  } catch (error) {
+    res.status(500).json({ message: err.message, status: "error" });
+  }
 });
 
 module.exports = router;

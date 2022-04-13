@@ -12,7 +12,7 @@ app.get("/", (req, res) => {
   res.send("Calls LOG API is running");
 });
 
-app.use("/api/v1/pushcalllog", require("./routes"));
+app.use("/api/v1/pushcalllog", require("./route"));
 
 app.listen(PORT, () => {
   console.log(`Server is running on port http://localhost:${PORT}`);
