@@ -9,7 +9,7 @@ const DB = require("./db");
 DB();
 
 app.get("/", (req, res) => {
-  res.send("Calls LOG API");
+  res.send("Calls LOG API is running");
 });
 
 app.use("/api/v1/pushcalllog", require("./routes"));
